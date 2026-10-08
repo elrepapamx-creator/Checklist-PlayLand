@@ -114,7 +114,7 @@ const checklistData = {
 
             "Licencia",
 
-            "Poloza de seguro",
+            "Poliza de seguro",
 
             
 
