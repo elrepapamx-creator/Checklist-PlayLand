@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checklist | PlayLand</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Librería para generar archivos Excel -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
+
+        <header class="app-header">
+
+            <div class="brand-area">
+
+                <div class="logo-container">
+
+                    <img
+                        src="Logoplayland-removebg-preview.png"
+                        alt="PlayLand"
+                        class="company-logo"
+                    >
+
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-small">
+                        PLAYLAND
+                    </span>
+
+                    <h1>
+                        Checklist Vehicular
+                    </h1>
+
+                    <p>
+                        Inovation Solutions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="vehicle-badge">
+
+                <i class="fa-solid fa-truck-pickup"></i>
+
+                <span>
+                    Inspección
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PROGRESO
+        ========================== -->
+
+        <div class="progress-container">
+
+            <div class="progress-info">
+
+                <span id="progressText">
+                    Paso 1 de 8
+                </span>
+
+                <span id="progressPercent">
+                    10%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CONTENIDO
+        ========================== -->
+
+        <main>
+
+
+            <!-- =========================
+                 PÁGINA 1
+            ========================== -->
+
+            <section
+                class="page active"
+                data-page="1"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-clipboard-list"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Datos de la unidad
+                        </h2>
+
+                        <p>
+                            Ingresa la información general de la inspección.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="fecha">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            Fecha
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="fecha"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="hora">
+
+                            <i class="fa-regular fa-clock"></i>
+
+                            Hora
+
+                        </label>
+
+                        <input
+                            type="time"
+                            id="hora"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="unidad">
+
+                            <i class="fa-solid fa-truck-pickup"></i>
+
+                            Unidad
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="unidad"
+                            placeholder="Ej. 001"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="conductor">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Conductor
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="conductor"
+                            placeholder="Nombre del conductor"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="kilometraje">
+
+                            <i class="fa-solid fa-gauge-high"></i>
+
+                            Kilometraje
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="kilometraje"
+                            min="0"
+                            placeholder="Ej. 125430"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="combustible">
+
+                            <i class="fa-solid fa-gas-pump"></i>
+
+                            Nivel de combustible
+
+                        </label>
+
+                        <select id="combustible">
+
+                            <option value="">
+                                Selecciona
+                            </option>
+
+                            <option value="Vacío">
+                                Vacío
+                            </option>
+
+                            <option value="1/4">
+                                1/4
+                            </option>
+
+                            <option value="1/2">
+                                1/2
+                            </option>
+
+                            <option value="3/4">
+                                3/4
+                            </option>
+
+                            <option value="Lleno">
+                                Lleno
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="tipoInspeccion">
+
+                            <i class="fa-solid fa-list-check"></i>
+
+                            Tipo de inspección
+
+                        </label>
+
+                        <select id="tipoInspeccion">
+
+                            <option value="">
+                                Selecciona
+                            </option>
+
+                            <option value="Salida">
+                                Salida
+                            </option>
+
+                            <option value="Regreso">
+                                Regreso
+                            </option>
+
+                            <option value="Mantenimiento">
+                                Mantenimiento
+                            </option>
+
+                            <option value="Inspección general">
+                                Inspección general
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PÁGINA 2
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="2"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-gears"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Motor
+                        </h2>
+
+                        <p>
+                            Revisa niveles y condiciones generales.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="checklist-motor"></div>
+
+            </section>
+
+
+            <!-- =========================
+                 PÁGINA 3
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="3"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-circle-dot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Interior
+                        </h2>
+
+                        <p>
+                            Revisa el estado de los interiores.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="checklist-llantas"></div>
+
+            </section>
+
+
+            <!-- =========================
+                 PÁGINA 4
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="4"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-car-burst"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Llantas
+                        </h2>
+
+                        <p>
+                            Verifica el estado de los neumaticos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="checklist-frenos"></div>
+
+            </section>
+
+
+            <!-- =========================
+                 PÁGINA 5
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="5"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-road"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Documentacón
+                        </h2>
+
+                        <p>
+                            Revisa que los documentos esten completos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="checklist-direccion"></div>
+
+            </section>
+
+
+            <!-- =========================
+                 PÁGINA 6
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="6"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Luces
+                        </h2>
+
+                        <p>
+                            Verifica iluminación.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="checklist-electrico"></div>
+
+            </section>
+
+
+            <!-- =========================
+                 PÁGINA 7
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="7"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-couch"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Equipo y herramienta
+                        </h2>
+
+                        <p>
+                            Revisa el estado del equipo y herramienta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="checklist-cabina"></div>
+
+            </section>
+
+
+           
+            <!-- =========================
+                 PÁGINA 10
+            ========================== -->
+
+            <section
+                class="page"
+                data-page="8"
+            >
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-file-circle-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Resumen del checklist
+                        </h2>
+
+                        <p>
+                            Revisa la información antes de enviarla.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     WHATSAPP
+                ========================== -->
+
+                <div class="whatsapp-config">
+
+                    <div class="whatsapp-title">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <div>
+
+                            <strong>
+                                Enviar checklist por WhatsApp
+                            </strong>
+
+                            <small>
+                                Escribe el número que recibirá el reporte.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="whatsapp">
+                            Número de WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="whatsapp"
+                            placeholder="Ej. 3312345678"
+                            maxlength="15"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     RESUMEN
+                ========================== -->
+
+                <div id="summaryContainer"></div>
+
+
+                <!-- =========================
+                     BOTONES FINALES
+                ========================== -->
+
+                <div class="final-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-whatsapp"
+                        id="sendWhatsapp"
+                    >
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Enviar por WhatsApp
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="downloadExcel"
+                    >
+
+                        <i class="fa-solid fa-file-excel"></i>
+
+                        Descargar Excel
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-new"
+                        id="newChecklist"
+                    >
+
+                        <i class="fa-solid fa-rotate-right"></i>
+
+                        Hacer nuevo checklist
+
+                    </button>
+
+                </div>
+
+
+                <div class="final-note">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        Al iniciar un nuevo checklist se borrará la información
+                        actual de esta inspección para comenzar desde cero.
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             MENSAJE
+        ========================== -->
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+
+        <!-- =========================
+             NAVEGACIÓN
+        ========================== -->
+
+        <div class="navigation">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="prevBtn"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Anterior
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="nextBtn"
+            >
+
+                Siguiente
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
+        <footer>
+
+            Checklist vehicular • PlayLand
+
+        </footer>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
